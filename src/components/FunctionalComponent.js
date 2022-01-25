@@ -11,9 +11,10 @@ const FunctionalComponent = ({number = 8}) => {
             clearTimeout(setT)
         }
     }, [])
-    // 一个有趣的实验，这里email一开始就显示"56...@qq.com"，而不是随着data.name变化而变化，why？
+
     const [email, setEmail] = useState("wendy@tc.com")
     useEffect(()=>{
+        // 这里刚进入也会componentDidMount一下
         setEmail("56...@qq.com")
         console.log(email)
     },[data.name])
